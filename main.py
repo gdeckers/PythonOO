@@ -15,11 +15,27 @@
 # pr2.desconto(10)
 # print(pr2.nome, pr2.preco)
 
-from BaseDados import BaseDeDados
+# from BaseDados import BaseDeDados
+#
+# bd = BaseDeDados()
+#
+# bd.inserir_cliente(1, 'José')
+# bd.inserir_cliente(2, 'João')
+# bd.inserir_cliente(3, 'Maria')
+# bd.lista_clientes()
 
-bd = BaseDeDados()
+from classes import CarrinhoCompra, Produto
 
-bd.inserir_cliente(1, 'José')
-bd.inserir_cliente(2, 'João')
-bd.inserir_cliente(3, 'Maria')
-bd.lista_clientes()
+carrinho = CarrinhoCompra()
+
+p1 = Produto('Camiseta Preta', 15)
+p2 = Produto('Camiseta Branca', 15)
+p3 = Produto('Tenis', 120)
+
+carrinho.inserir_produto(p1)
+carrinho.inserir_produto(p2)
+carrinho.inserir_produto(p3)
+carrinho.inserir_produto(p1)
+
+carrinho.listar_produto()
+print(carrinho.soma_total())
